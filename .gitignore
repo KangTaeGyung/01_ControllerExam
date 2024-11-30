@@ -1,6 +1,6 @@
 #eclipse
-.project
-.classpath
+ControllerExam/.project
+ControllerExam/.classpath
 
 # Compiled class file
 *.class
