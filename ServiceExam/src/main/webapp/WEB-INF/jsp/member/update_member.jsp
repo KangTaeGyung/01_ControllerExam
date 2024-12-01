@@ -5,11 +5,11 @@
 	<title>Member</title>
 	<script type="text/javascript">
 		function fn_save() {
-			document.detailForm.action = "/member/edit.do";
+			document.detailForm.action = "<c:out value="/member/edit.do"/>";
             document.detailForm.submit();
 		}
 		function fn_delete(){
-			document.detailForm.action = "/member/delete.do";
+			document.detailForm.action = "<c:out value="/member/delete.do"/>";
             document.detailForm.submit();
 		}
 	</script>

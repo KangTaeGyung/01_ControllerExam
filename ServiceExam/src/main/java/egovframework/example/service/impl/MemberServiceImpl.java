@@ -15,7 +15,7 @@ import egovframework.example.vo.MemberVO;
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
-	MemberMapper memberMapper;
+	private MemberMapper memberMapper;
 
 	@Override
 	public List<MemberVO> selectAll() {

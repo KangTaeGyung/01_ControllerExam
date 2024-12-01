@@ -17,7 +17,7 @@ import egovframework.example.vo.MemberVO;
 public class MemberController {
 	
 	@Autowired
-	MemberService memberService;
+	private MemberService memberService;
 	
 	@GetMapping("/member.do")
 	public String selectAll(Model model) {

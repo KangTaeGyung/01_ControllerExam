@@ -16,7 +16,7 @@ import egovframework.example.vo.DeptVO;
 public class DeptServiceImpl implements DeptService{
 
 	@Autowired
-	DeptMapper deptMapper;
+	private DeptMapper deptMapper;
 	
 	@Override
 	public List<DeptVO> selectAll() {

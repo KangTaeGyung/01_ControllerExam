@@ -5,7 +5,7 @@
 	<title>Dept</title>
 	<script type="text/javascript" defer="defer">
 		function fn_save() {
-			document.addForm.action = "/dept/add.do";
+			document.addForm.action = "<c:out value="/dept/add.do"/>";
 			document.addForm.submit();
 		}
 	</script>

@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 public class DeptController {
 
 	@Autowired
-	DeptService deptService;
+	private DeptService deptService;
 
 	@GetMapping("/dept.do")
 	public String selectAll(Model model) {

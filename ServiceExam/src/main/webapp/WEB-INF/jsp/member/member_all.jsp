@@ -5,12 +5,12 @@
 	<title>Dept</title>
 	<script type="text/javascript" defer="defer">
 		function fn_addView() {
-			document.listForm.action="/member/addition.do";
+			document.listForm.action="<c:out value="/member/addition.do"/>";
             document.listForm.submit();
         }
 	    function fn_select(eno) {
 			document.listForm.eno.value = eno;
-			document.listForm.action="/member/edition.do";
+			document.listForm.action="<c:out value="/member/edition.do"/>";
 	        document.listForm.submit();
 	    }
 	</script>
