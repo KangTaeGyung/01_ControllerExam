@@ -1,6 +1,6 @@
 #eclipse
-ControllerExam/.project
-ControllerExam/.classpath
+*/.project
+*/.classpath
 Servers/
 
 # Compiled class file
