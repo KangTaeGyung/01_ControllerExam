@@ -28,7 +28,7 @@ public class MemberMapper {
     }
 
     //    아이디로 조회하는 함수
-    public MemberVO selectById(long eno) {
+    public MemberVO selectMember(long eno) {
         List<MemberVO> list = sampleMember.getList();
 
         MemberVO resDept = null;
@@ -80,7 +80,7 @@ public class MemberMapper {
     }
 
 //  데이터를 삭제하는 함수
-    public int deleteById(long id) {
+    public int delete(long id) {
         List<MemberVO> list = sampleMember.getList();
 
         for (int i = 0; i < list.size(); i++) {

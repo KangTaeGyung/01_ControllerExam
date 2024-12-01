@@ -28,7 +28,7 @@ public class DeptMapper {
     }
 
     //    아이디로 조회하는 함수
-    public DeptVO selectById(long dno) {
+    public DeptVO selectDept(long dno) {
         List<DeptVO> list = sampleData.getList();
 
         DeptVO resDept = null;
@@ -79,7 +79,7 @@ public class DeptMapper {
     }
 
 //  데이터를 삭제하는 함수
-    public int deleteById(long id) {
+    public int delete(long id) {
         List<DeptVO> list = sampleData.getList();
 
         for (int i = 0; i < list.size(); i++) {
