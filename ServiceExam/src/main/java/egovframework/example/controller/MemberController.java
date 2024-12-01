@@ -22,7 +22,7 @@ public class MemberController {
 	@GetMapping("/member.do")
 	public String selectAll(Model model) {
 		
-		List<MemberVO> list = memberService.selectAll(); // 전제조회 
+		List<MemberVO> list = memberService.selectAll();
 		model.addAttribute("list", list);
 		return "member/member_all";
 	}

@@ -7,11 +7,11 @@ import java.util.List;
 import egovframework.example.vo.DeptVO;
 
 public interface DeptService {
-	List<DeptVO> selectAll();         // 전체 조회 함수
-	void insert(DeptVO deptVO); // insert 함수
-	DeptVO selectDept(long dno);      // 상세조회 함수
-	void update(DeptVO deptVO); // update 함수
-	void delete(long dno);      // delete 함수
+	List<DeptVO> selectAll();   
+	void insert(DeptVO deptVO); 
+	DeptVO selectDept(long dno);
+	void update(DeptVO deptVO); 
+	void delete(long dno);      
 }
 
 

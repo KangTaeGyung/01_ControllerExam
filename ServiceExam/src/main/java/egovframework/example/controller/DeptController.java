@@ -19,9 +19,8 @@ import lombok.extern.log4j.Log4j;
 public class DeptController {
 
 	@Autowired
-	DeptService deptService; // 서비스 객체
+	DeptService deptService;
 
-//	전체 조회 
 	@GetMapping("/dept.do")
 	public String selectAll(Model model) {
 		List<DeptVO> list = deptService.selectAll();
