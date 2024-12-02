@@ -31,7 +31,7 @@ public class DeptController {
 	@Resource(name = "beanValidator")
 	protected DefaultBeanValidator beanValidator;
 	
-	@GetMapping("/basic/dept")
+	@GetMapping("/basic/dept.do")
 	public String selectDeptList(
 			@ModelAttribute("searchVO") Criteria searchVO,
 			Model model) throws Exception {
@@ -59,14 +59,14 @@ public class DeptController {
 	}
 
 //	추가 페이지 열기 함수
-	@GetMapping("/basic/dept/addition")
+	@GetMapping("/basic/dept/addition.do")
 	public String createDeptView(Model model) {
 		model.addAttribute("deptVO", new DeptVO());
 		return "basic/dept/add_dept";
 	}
 
-	@PostMapping("/basic/dept/add")
-	public String createDept(@ModelAttribute DeptVO deptVO, BindingResult bindingResult) throws Exception {
+	@PostMapping("/basic/dept/add.do")
+	public String insert(@ModelAttribute DeptVO deptVO, BindingResult bindingResult) throws Exception {
 		
 		beanValidator.validate(deptVO, bindingResult);
 		
@@ -75,12 +75,12 @@ public class DeptController {
 		}
 		
 		log.info("테스트 " + deptVO);
-		deptService.insertDept(deptVO);
+		deptService.insert(deptVO);
 		
 		return "redirect:/basic/dept";  
 	}
 	
-	@GetMapping("/basic/dept/edition")
+	@GetMapping("/basic/dept/edition.do")
 	public String updateDeptView(@RequestParam int dno, Model model) 
 			      throws Exception {
 		DeptVO deptVO = deptService.selectDept(dno);
@@ -88,18 +88,18 @@ public class DeptController {
 		return "basic/dept/update_dept";
 	}
 	
-	@PostMapping("/basic/dept/edit")
-	public String updateDept(@RequestParam int dno,
+	@PostMapping("/basic/dept/edit.do")
+	public String update(@RequestParam int dno,
 							@ModelAttribute DeptVO deptVO
 			) throws Exception {
-		deptService.updateDept(deptVO);
+		deptService.update(deptVO);
 		return "redirect:/basic/dept"; 
 	}
 	
-	@PostMapping("/basic/dept/delete")
-	public String deleteDept(@ModelAttribute DeptVO deptVO) throws Exception
+	@PostMapping("/basic/dept/delete.do")
+	public String delete(@ModelAttribute DeptVO deptVO) throws Exception
 	{
-        deptService.deleteDept(deptVO);
+        deptService.delete(deptVO);
 		return "redirect:/basic/dept"; 
 	}
 }

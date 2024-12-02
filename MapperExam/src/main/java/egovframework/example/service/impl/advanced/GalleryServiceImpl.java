@@ -37,7 +37,7 @@ public class GalleryServiceImpl implements GalleryService {
 	
 //	insert : source - Over...
 	@Override
-	public void insertGallery(GalleryVO galleryVO) throws Exception {
+	public void insert(GalleryVO galleryVO) throws Exception {
 		// TODO galleryMapper 의 insert 함수 실행 + 업무로직
 		    String newUuid = UUID.randomUUID().toString(); // 새 uuid
 		    String fileDownloadURL = generateDownloadUrl(newUuid);

@@ -41,7 +41,7 @@ public class EmpServiceImpl implements EmpService{
 	
 //	insert 함수
 	@Override
-	public void insertEmp(EmpVO empVO) throws Exception {
+	public void insert(EmpVO empVO) throws Exception {
 		// TODO empMapper 의 insert 함수 실행 : 내부 sql 문 실행
 //		  자동정렬 : ctrl + alt + l
 		empMapper.insert(empVO);
@@ -57,14 +57,14 @@ public class EmpServiceImpl implements EmpService{
 	
 //	update : source
 	@Override
-	public void updateEmp(EmpVO empVO) throws Exception {
+	public void update(EmpVO empVO) throws Exception {
 		// TODO empMapper 의 update 함수 실행, 업무로직 (생략)
 		empMapper.update(empVO);
 	}
 	
 //	delete : source
 	@Override
-	public void deleteEmp(EmpVO empVO) throws Exception {
+	public void delete(EmpVO empVO) throws Exception {
 		// TODO empMapper 의 delete 함수 실행, 업무로직 (생략)
 		empMapper.delete(empVO);
 	}

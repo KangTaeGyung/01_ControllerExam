@@ -37,7 +37,7 @@ public class FileDbServiceImpl implements FileDbService {
 	
 //	insert : source - Over...
 	@Override
-	public void insertFileDb(FileDbVO fileDbVO) throws Exception {
+	public void insert(FileDbVO fileDbVO) throws Exception {
 		// TODO 역할 : fileDbMapper 의 insert 함수 실행 , 
 		// 업무로직 추가 : 
 //		   1) 기본키 자동생성 : 자바의 UUID 만들기(유일한 문자) -> 첨부파일이름 사용
@@ -73,7 +73,7 @@ public class FileDbServiceImpl implements FileDbService {
 	
 	// delete : source
 	@Override
-	public void deleteFileDb(String uuid) throws Exception {
+	public void delete(String uuid) throws Exception {
 		// TODO 역할 : fileDbMapper 의 delete 함수 실행
 		fileDbMapper.delete(uuid);
 	}

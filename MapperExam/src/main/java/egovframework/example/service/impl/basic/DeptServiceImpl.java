@@ -36,7 +36,7 @@ public class DeptServiceImpl implements DeptService {
 	
 //	insert 함수 : source 
 	@Override
-	public void insertDept(DeptVO deptVO) throws Exception {
+	public void insert(DeptVO deptVO) throws Exception {
 		// TODO deptMapper 의 insert 함수 실행 : 내부 sql 문 실행
 		deptMapper.insert(deptVO);
 	}
@@ -51,14 +51,14 @@ public class DeptServiceImpl implements DeptService {
 
 //	udpate : source
 	@Override
-	public void updateDept(DeptVO deptVO) throws Exception {
+	public void update(DeptVO deptVO) throws Exception {
 		// TODO 1) deptMapper 함수를 실행(sql문실행) 2) 업무로직을 추가(생략)
 		deptMapper.update(deptVO);
 	}
 
 //	삭제 : source
 	@Override
-	public void deleteDept(DeptVO deptVO) throws Exception {
+	public void delete(DeptVO deptVO) throws Exception {
 		// TODO 1) deptMapper 함수를 실행(sql문실행) 2) 업무로직을 추가(생략)
 		deptMapper.delete(deptVO);
 	}

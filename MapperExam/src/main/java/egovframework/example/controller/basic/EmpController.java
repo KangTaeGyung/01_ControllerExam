@@ -21,7 +21,7 @@ public class EmpController {
 	@Autowired
 	private EmpService empService; 
 	
-	@GetMapping("/basic/emp")
+	@GetMapping("/basic/emp.do")
 	public String selectEmpList(@ModelAttribute("searchVO") Criteria searchVO,
 			Model model
 			) throws Exception {
@@ -47,37 +47,37 @@ public class EmpController {
 		return "basic/emp/emp_all";
 	}
 	
-	@GetMapping("/basic/emp/addition")
+	@GetMapping("/basic/emp/addition.do")
 	public String createEmpView(Model model) {
 		return "basic/emp/add_emp";
 	}
 	
-	@PostMapping("/basic/emp/add")
-	public String createEmp(@ModelAttribute EmpVO empVO) throws Exception {
-		empService.insertEmp(empVO);
+	@PostMapping("/basic/emp/add.do")
+	public String insert(@ModelAttribute EmpVO empVO) throws Exception {
+		empService.insert(empVO);
 		
 		return "redirect:/basic/emp"; 
 	}
 	
 
-	@GetMapping("/basic/emp/edition")
+	@GetMapping("/basic/emp/edition.do")
 	public String updateEmpView(@RequestParam int eno, Model model) throws Exception {
 		EmpVO empVO = empService.selectEmp(eno);
 		model.addAttribute("empVO", empVO);
 		return "basic/emp/update_emp";
 	}
 	
-	@PostMapping("/basic/emp/edit")
-	public String updateEmp(@RequestParam int eno,
+	@PostMapping("/basic/emp/edit.do")
+	public String update(@RequestParam int eno,
 							@ModelAttribute EmpVO empVO
 			) throws Exception {
-		empService.updateEmp(empVO);
+		empService.update(empVO);
 		return "redirect:/basic/emp"; 
 	}
 	
-	@PostMapping("/basic/emp/delete")
-	public String deleteEmp(@ModelAttribute EmpVO empVO) throws Exception {
-        empService.deleteEmp(empVO);
+	@PostMapping("/basic/emp/delete.do")
+	public String delete(@ModelAttribute EmpVO empVO) throws Exception {
+        empService.delete(empVO);
 		return "redirect:/basic/emp"; 
 	}
 }

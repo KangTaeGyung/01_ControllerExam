@@ -25,7 +25,7 @@ public class GalleryController {
 	@Autowired
 	GalleryService galleryService; 
 
-	@GetMapping("/advanced/gallery")
+	@GetMapping("/advanced/gallery.do")
 	public String selectGalleryList(@ModelAttribute("searchVO") Criteria searchVO, Model model) throws Exception {
 		searchVO.setPageUnit(3); 
 		searchVO.setPageSize(2); 
@@ -50,17 +50,17 @@ public class GalleryController {
 		return "advanced/gallery/gallery_all";
 	}
 	
-	@GetMapping("/advanced/gallery/addition")
+	@GetMapping("/advanced/gallery/addition.do")
 	public String createGalleryView() {
 		return "advanced/gallery/add_gallery";
 	}
 	
-	@PostMapping("/advanced/gallery/add")
-	public String createGallery(@RequestParam(defaultValue = "") String galleryTitle,
+	@PostMapping("/advanced/gallery/add.do")
+	public String insert(@RequestParam(defaultValue = "") String galleryTitle,
 							@RequestParam(required = false) MultipartFile image
 			) throws Exception {
 		GalleryVO galleryVO = new GalleryVO(galleryTitle, image.getBytes());
-		galleryService.insertGallery(galleryVO);
+		galleryService.insert(galleryVO);
 		return "redirect:/advanced/gallery"; 
 	}
 }

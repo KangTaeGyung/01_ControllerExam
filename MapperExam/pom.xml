@@ -145,6 +145,30 @@
 			<version>2.4.0</version>
 		</dependency>
         
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ucp</artifactId>
+            <version>19.14.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle.database.security</groupId>
+            <artifactId>oraclepki</artifactId>
+            <version>19.14.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle.database.security</groupId>
+            <artifactId>osdt_cert</artifactId>
+            <version>19.14.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle.database.security</groupId>
+            <artifactId>osdt_core</artifactId>
+            <version>19.14.0.0</version>
+        </dependency>
+        
 <!--         TODO: mysql 사용않함 -->
 <!--         <dependency>
             <groupId>mysql</groupId>
@@ -158,7 +182,7 @@
             <version>14</version>
             <scope>system</scope>
 <!--             ojdbc-14.jar => ojdbc14.jar -->
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc14.jar</systemPath>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc8.jar</systemPath>
         </dependency>
 	</dependencies>
 

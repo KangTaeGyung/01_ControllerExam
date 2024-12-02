@@ -28,8 +28,8 @@
                         Dept(부서)
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/dept">Dept</a></li>
-                        <li><a class="dropdown-item" href="/basic/dept/addition">Add Dept</a></li>
+                        <li><a class="dropdown-item" href="/basic/dept.do">Dept</a></li>
+                        <li><a class="dropdown-item" href="/basic/dept/addition.do">Add Dept</a></li>
                     </ul>
                 </li>
 
@@ -39,8 +39,8 @@
                         Emp(사원)
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/emp">Emp</a></li>
-                        <li><a class="dropdown-item" href="/basic/emp/addition">Add Emp</a></li>
+                        <li><a class="dropdown-item" href="/basic/emp.do">Emp</a></li>
+                        <li><a class="dropdown-item" href="/basic/emp/addition.do">Add Emp</a></li>
                     </ul>
                 </li>
 
@@ -50,8 +50,8 @@
                         Faq(종합문제)
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/faq">Faq</a></li>
-                        <li><a class="dropdown-item" href="/basic/faq/addition">Add Faq</a></li>
+                        <li><a class="dropdown-item" href="/basic/faq.do">Faq</a></li>
+                        <li><a class="dropdown-item" href="/basic/faq/addition.do">Add Faq</a></li>
                     </ul>
                 </li>
 
@@ -61,8 +61,8 @@
                         FileDb
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/advanced/fileDb">FileDb</a></li>
-                        <li><a class="dropdown-item" href="/advanced/fileDb/addition">Add FileDb</a></li>
+                        <li><a class="dropdown-item" href="/advanced/fileDb.do">FileDb</a></li>
+                        <li><a class="dropdown-item" href="/advanced/fileDb/addition.do">Add FileDb</a></li>
                     </ul>
                 </li>
 
@@ -72,8 +72,8 @@
                         Gallery
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/advanced/gallery">Gallery</a></li>
-                        <li><a class="dropdown-item" href="/advanced/gallery/addition">Add Gallery</a></li>
+                        <li><a class="dropdown-item" href="/advanced/gallery.do">Gallery</a></li>
+                        <li><a class="dropdown-item" href="/advanced/gallery/addition.do">Add Gallery</a></li>
                     </ul>
                 </li>
             </ul>

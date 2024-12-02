@@ -33,7 +33,7 @@ public class FileDbController {
 	@Autowired
 	FileDbService fileDbService; 
 
-	@GetMapping("/advanced/fileDb")
+	@GetMapping("/advanced/fileDb.do")
 	public String selectFileDbList(@ModelAttribute("searchVO") Criteria searchVO, Model model) throws Exception {
 		searchVO.setPageUnit(3); 
 		searchVO.setPageSize(2); 
@@ -59,22 +59,22 @@ public class FileDbController {
 	}
 
 //	추가 페이지 열기 :
-	@GetMapping("/advanced/fileDb/addition")
+	@GetMapping("/advanced/fileDb/addition.do")
 	public String createFileDbView() {
 		return "advanced/fileDb/add_fileDb";
 	}
 	
-	@PostMapping("/advanced/fileDb/add")
-	public String createFileDb(@RequestParam(defaultValue = "") String fileTitle,
+	@PostMapping("/advanced/fileDb/add.do")
+	public String insert(@RequestParam(defaultValue = "") String fileTitle,
 							@RequestParam(defaultValue = "") String fileContent,
 							@RequestParam(required = false) MultipartFile image
 			) throws Exception {
 		FileDbVO fileDbVO = new FileDbVO(fileTitle, fileContent, image.getBytes());
-		fileDbService.insertFileDb(fileDbVO);
+		fileDbService.insert(fileDbVO);
 		return "redirect:/advanced/fileDb"; 
 	}
 	
-	@GetMapping("/advanced/fileDb/{uuid}")
+	@GetMapping("/advanced/fileDb.do/{uuid}")
 	@ResponseBody
 	public ResponseEntity<byte[]> findDownload(@PathVariable String uuid) throws Exception {
 		FileDbVO fileDbVO = fileDbService.selectFileDb(uuid);
@@ -86,10 +86,10 @@ public class FileDbController {
         return new ResponseEntity<byte[]>(fileDbVO.getFileData(), headers, HttpStatus.OK);
 	}
 	
-	@PostMapping("/advanced/fileDb/delete")
-	public String deleteFileDb(@RequestParam(defaultValue = "") String uuid) throws Exception {
+	@PostMapping("/advanced/fileDb/delete.do")
+	public String delete(@RequestParam(defaultValue = "") String uuid) throws Exception {
 		log.info("테스트 : " + uuid);
-		fileDbService.deleteFileDb(uuid);
+		fileDbService.delete(uuid);
 		return "redirect:/advanced/fileDb"; 
 	}
 }

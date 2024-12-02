@@ -15,5 +15,4 @@
 <!-- 		<property name="basePackage" value="egovframework.example.sample.service.impl" /> -->
 		<property name="basePackage" value="egovframework.example.mapper" />
 	</bean>
-    
 </beans>
