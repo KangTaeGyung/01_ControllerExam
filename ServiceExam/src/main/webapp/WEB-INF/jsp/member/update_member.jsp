@@ -18,14 +18,14 @@
 <jsp:include page="/common/header.jsp"></jsp:include>
 <div class="container">
 	<form id="detailForm" name="detailForm" method="post">
-		<input type="hidden" name="eno" value="${memberVO.eno}" />
+		<input type="hidden" name="eno" value="<c:out value="${memberVO.eno}"/>" />
 		<div class="mb-3">
 		  <label for="ename" class="form-label">ename</label>
 		  <input type="text" 
 		         class="form-control" 
 		         id="ename" 
 		         name="ename"
-		         value="${memberVO.ename}"
+		         value="<c:out value="${memberVO.ename}"/>"
 		         placeholder="사원명">
 		</div>
 		
@@ -35,7 +35,7 @@
 		         class="form-control" 
 		         id="job" 
 		         name="job"
-		         value="${memberVO.job}"
+		         value="<c:out value="${memberVO.job}"/>"
 		         placeholder="직위">
 		</div>	
 		
@@ -45,7 +45,7 @@
 		         class="form-control" 
 		         id="manager" 
 		         name="manager"
-		         value="${memberVO.manager}"
+		         value="<c:out value="${memberVO.manager}"/>"
 		         placeholder="관리자">
 		</div>	
 		

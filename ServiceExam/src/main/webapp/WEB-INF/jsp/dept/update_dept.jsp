@@ -19,14 +19,14 @@
 <jsp:include page="/common/header.jsp"></jsp:include>
 <div class="container">
 	<form id="detailForm" name="detailForm" method="post">
-		<input type="hidden" name="dno" value="${deptVO.dno}" />
+		<input type="hidden" name="dno" value="<c:out value="${deptVO.dno}"/>" />
 		<div class="mb-3">
 		  <label for="dname" class="form-label">dname</label>
 		  <input type="text" 
 		         class="form-control" 
 		         id="dname" 
 		         name="dname"
-		         value="${deptVO.dname}"
+		         value="<c:out value="${deptVO.dname}"/>"
 		         placeholder="부서명">
 		</div>
 		
@@ -36,7 +36,7 @@
 		         class="form-control" 
 		         id="loc" 
 		         name="loc"
-		         value="${deptVO.loc}"
+		         value="<c:out value="${deptVO.loc}"/>"
 		         placeholder="부서위치">
 		</div>
 		
