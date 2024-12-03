@@ -61,7 +61,7 @@ public class DeptController {
 //	추가 페이지 열기 함수
 	@GetMapping("/basic/dept/addition.do")
 	public String createDeptView(Model model) {
-		model.addAttribute("deptVO", new DeptVO());
+		model.addAttribute("deptVO", new DeptVO()); // 유효성 체크 모델
 		return "basic/dept/add_dept";
 	}
 
@@ -71,7 +71,7 @@ public class DeptController {
 		beanValidator.validate(deptVO, bindingResult);
 		
 		if(bindingResult.hasErrors()) {
-			return "basic/dept/add_dept"; 
+			return "basic/dept/add_dept";
 		}
 		
 		log.info("테스트 " + deptVO);

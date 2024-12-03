@@ -22,7 +22,7 @@
             		class="form-control"
             		id="dname"
             		name="dname"
-            		placeholder="게시판제목" />
+            		placeholder="dname" />
              &nbsp;<form:errors path="dname" />
         </div>
         <div class="mb-3">
@@ -31,7 +31,7 @@
                    class="form-control"
                    id="loc"
                    name="loc"
-                   placeholder="게시판내용입력" />
+                   placeholder="loc" />
              &nbsp;<form:errors path="loc" />
         </div>
         <div class="mb-3">

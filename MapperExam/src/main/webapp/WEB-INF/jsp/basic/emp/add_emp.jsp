@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -14,14 +15,15 @@
 <body>
 <jsp:include page="/common/header.jsp"/>
 <div class="container">
-	<form id="addForm" name="addForm" method="post">
+	<form:form modelAttribute="empVO" id="addForm" name="addForm" method="post">
         <div class="mb-3">
             <label for="ename" class="form-label">ename</label>
             <input  
             		class="form-control"
             		id="ename"
             		name="ename"
-            		placeholder="ename 입력 " />
+            		placeholder="ename" />
+            		&nbsp;<form:errors path="ename" />
         </div>
         <div class="mb-3">
             <label for="job" class="form-label">job</label>
@@ -29,7 +31,8 @@
                     class="form-control"
                     id="job"
             		name="job"
-                   placeholder="job 입력 " />
+                   placeholder="job" />
+                   &nbsp;<form:errors path="job" />
         </div>
         <div class="mb-3">
             <label for="manager" class="form-label">manager</label>
@@ -37,7 +40,9 @@
                     class="form-control"
                     id="manager"
             		name="manager"
-                   placeholder="manager 입력 " />
+            		value="0"
+                   placeholder="manager" />
+                   &nbsp;<form:errors path="manager" />
         </div>
         <div class="mb-3">
             <label for="hiredate" class="form-label">hiredate</label>
@@ -45,7 +50,8 @@
                     class="form-control"
                     id="hiredate"
                     name="hiredate"
-                   placeholder="hiredate 입력 " />
+                   placeholder="hiredate" />
+                   &nbsp;<form:errors path="hiredate" />
         </div>
         <div class="mb-3">
             <label for="salary" class="form-label">salary</label>
@@ -53,7 +59,9 @@
                     class="form-control"
                     id="salary"
                     name="salary"
-                   placeholder="salary 입력 " />
+                    value="0"
+                   placeholder="salary" />
+                   &nbsp;<form:errors path="salary" />
         </div>
         <div class="mb-3">
             <label for="commission" class="form-label">commission</label>
@@ -61,7 +69,9 @@
                     class="form-control"
                     id="commission"
                     name="commission"
-                   placeholder="commission 입력 " />
+                    value="0"
+                   placeholder="commission" />
+                   &nbsp;<form:errors path="commission" />
         </div>
         <div class="mb-3">
             <label for="dno" class="form-label">dno</label>
@@ -69,12 +79,14 @@
                     class="form-control"
                     id="dno"
                     name="dno"
-                   placeholder="dno 입력 " />
+                    value="0"
+                   placeholder="dno" />
+                   &nbsp;<form:errors path="dno" />
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" onclick="fn_save()">저장</button>
         </div>
-    </form>
+    </form:form>
 </div>
 <jsp:include page="/common/footer.jsp"/>
 </body>
