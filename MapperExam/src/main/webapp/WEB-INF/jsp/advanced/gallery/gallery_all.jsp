@@ -21,6 +21,14 @@
 		document.listForm.action = "<c:out value="/advanced/gallery.do" />";
 		document.listForm.submit();
 	}
+	// 삭제 버튼 클릭시 실행 함수 : uuid(기본키)
+	function fn_delete(id) {
+		document.listForm.uuid.value = id; // jsp -> java 전송(uuid)
+		// get -> post 변경
+		document.listForm.method="post";
+		document.listForm.action = "<c:out value="/advanced/gallery/delete.do" />";
+		document.listForm.submit();
+	}
 </script>
 </head>
 <body>
@@ -29,6 +37,8 @@
 	<%--    본문--%>
 	<div class="container">
 		<form id="listForm" name="listForm" method="get">
+		<!-- 			uuid 전송용 -->
+			<input type="hidden" name="uuid" >
 			<!-- 		검색어 입력양식 -->
 			<div class="input-group mb-3 mt-3">
 				<input type="text" class="form-control" 
@@ -53,7 +63,7 @@
 								alt="이미지">
 							<div class="card-body">
 								<h5 class="card-title"><c:out value="${data.galleryTitle}" /></h5>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
+								<a href="#" class="btn btn-danger" onclick="fn_delete('${data.uuid}')">삭제</a>
 							</div>
 						</div>
 				   </div>

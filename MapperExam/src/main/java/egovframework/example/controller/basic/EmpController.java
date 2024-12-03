@@ -56,7 +56,7 @@ public class EmpController {
 	public String insert(@ModelAttribute EmpVO empVO) throws Exception {
 		empService.insert(empVO);
 		
-		return "redirect:/basic/emp"; 
+		return "redirect:/basic/emp.do"; 
 	}
 	
 
@@ -72,13 +72,13 @@ public class EmpController {
 							@ModelAttribute EmpVO empVO
 			) throws Exception {
 		empService.update(empVO);
-		return "redirect:/basic/emp"; 
+		return "redirect:/basic/emp.do"; 
 	}
 	
 	@PostMapping("/basic/emp/delete.do")
 	public String delete(@ModelAttribute EmpVO empVO) throws Exception {
         empService.delete(empVO);
-		return "redirect:/basic/emp"; 
+		return "redirect:/basic/emp.do"; 
 	}
 }
 

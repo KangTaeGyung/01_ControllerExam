@@ -61,4 +61,11 @@
 	<!-- /For Pagination Tag -->
 
     <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
+    
+   	<!-- TODO: 파일 업로드 설정 : 기본(1M) => 10M 변경  -->
+ 	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10000000" />
+		<property name="maxInMemorySize" value="10000000" />
+	</bean>
 </beans>

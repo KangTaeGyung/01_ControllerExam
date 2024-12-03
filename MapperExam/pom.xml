@@ -181,7 +181,6 @@
             <artifactId>ojdbc</artifactId>
             <version>14</version>
             <scope>system</scope>
-<!--             ojdbc-14.jar => ojdbc14.jar -->
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc8.jar</systemPath>
         </dependency>
 	</dependencies>

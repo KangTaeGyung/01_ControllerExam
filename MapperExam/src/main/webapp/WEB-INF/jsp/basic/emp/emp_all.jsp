@@ -33,7 +33,6 @@
 		         id="searchKeyword"
 		         name="searchKeyword"
 		         placeholder="사원명입력"
-		         onkeypress="fn_egov_selectList()"
 		  >
 		  <button class="btn btn-primary" 
 		          type="button" 

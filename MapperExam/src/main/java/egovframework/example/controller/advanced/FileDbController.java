@@ -71,12 +71,12 @@ public class FileDbController {
 			) throws Exception {
 		FileDbVO fileDbVO = new FileDbVO(fileTitle, fileContent, image.getBytes());
 		fileDbService.insert(fileDbVO);
-		return "redirect:/advanced/fileDb"; 
+		return "redirect:/advanced/fileDb.do"; 
 	}
 	
-	@GetMapping("/advanced/fileDb.do/{uuid}")
+	@GetMapping("/advanced/fileDb/download.do")
 	@ResponseBody
-	public ResponseEntity<byte[]> findDownload(@PathVariable String uuid) throws Exception {
+	public ResponseEntity<byte[]> findDownload(@RequestParam(defaultValue = "") String uuid) throws Exception {
 		FileDbVO fileDbVO = fileDbService.selectFileDb(uuid);
 		
         HttpHeaders headers = new HttpHeaders();             
@@ -90,7 +90,7 @@ public class FileDbController {
 	public String delete(@RequestParam(defaultValue = "") String uuid) throws Exception {
 		log.info("테스트 : " + uuid);
 		fileDbService.delete(uuid);
-		return "redirect:/advanced/fileDb"; 
+		return "redirect:/advanced/fileDb.do"; 
 	}
 }
 

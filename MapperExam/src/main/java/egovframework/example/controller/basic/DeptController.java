@@ -77,7 +77,7 @@ public class DeptController {
 		log.info("테스트 " + deptVO);
 		deptService.insert(deptVO);
 		
-		return "redirect:/basic/dept";  
+		return "redirect:/basic/dept.do";  
 	}
 	
 	@GetMapping("/basic/dept/edition.do")
@@ -93,14 +93,14 @@ public class DeptController {
 							@ModelAttribute DeptVO deptVO
 			) throws Exception {
 		deptService.update(deptVO);
-		return "redirect:/basic/dept"; 
+		return "redirect:/basic/dept.do"; 
 	}
 	
 	@PostMapping("/basic/dept/delete.do")
 	public String delete(@ModelAttribute DeptVO deptVO) throws Exception
 	{
         deptService.delete(deptVO);
-		return "redirect:/basic/dept"; 
+		return "redirect:/basic/dept.do"; 
 	}
 }
 

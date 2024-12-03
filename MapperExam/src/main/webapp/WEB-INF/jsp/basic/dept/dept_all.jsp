@@ -33,8 +33,7 @@
 		         class="form-control" 
 		         id="searchKeyword"
 		         name="searchKeyword"
-		         placeholder="부서명입력" 
-		         onkeypress="fn_egov_selectList()"
+		         placeholder="부서명입력"
 		  >
 		  <button class="btn btn-primary" 
 		          type="button" 
