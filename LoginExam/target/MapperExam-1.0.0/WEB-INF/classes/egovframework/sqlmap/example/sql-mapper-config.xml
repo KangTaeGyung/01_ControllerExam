@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- Settings 설정 -->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+    
+    <!-- 별명 지정 -->
+    <typeAliases>
+<!--     TODO: 예제 별명 설정 -->
+        <typeAlias type="egovframework.example.vo.common.Criteria" alias="Criteria"/>
+        <typeAlias type="egovframework.example.vo.basic.DeptVO" alias="DeptVO"/>
+        <typeAlias type="egovframework.example.vo.basic.EmpVO" alias="EmpVO"/>
+        <typeAlias type="egovframework.example.vo.advanced.FileDbVO" alias="FileDbVO"/>
+        <typeAlias type="egovframework.example.vo.advanced.GalleryVO" alias="GalleryVO"/>
+        
+<!--         전자정부 샘플 설정 -->
+		<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+		<typeAlias alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+		<typeAlias alias="sampleVO" type="egovframework.example.sample.service.SampleVO"/>
+    </typeAliases>
+</configuration>

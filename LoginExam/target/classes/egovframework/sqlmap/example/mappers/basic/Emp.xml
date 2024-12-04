@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="egovframework.example.mapper.basic.EmpMapper">
+    <select id="selectEmpList" 
+            parameterType="Criteria"
+            resultType="EmpVO"
+    >
+       SELECT * FROM TB_EMP
+		WHERE ENAME LIKE '%'|| #{searchKeyword} ||'%'
+		OFFSET #{firstIndex} ROWS
+		FETCH NEXT #{recordCountPerPage} ROWS ONLY
+    </select>
+    
+	<select id="selectEmpListTotCnt"
+			parameterType="Criteria"
+			resultType="int"
+	>
+		SELECT COUNT(*) FROM TB_EMP
+		WHERE ENAME LIKE '%' || #{searchKeyword}  || '%'
+	</select>
+	
+	<insert id="insert" parameterType="EmpVO">
+		INSERT INTO TB_EMP(
+				ENO
+				, ENAME
+				, JOB
+				, MANAGER
+				, HIREDATE
+				, SALARY
+				, COMMISSION
+				, DNO
+				, INSERT_TIME
+			) 
+			VALUES(
+				SQ_EMP.NEXTVAL
+				,#{ename}
+				,#{job}
+				,#{manager}
+				,#{hiredate}
+				,#{salary}
+				,#{commission}
+				,#{dno}
+				,TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+			)
+	</insert>
+	
+	<select id="selectEmp" parameterType="int" resultType="EmpVO">
+		SELECT * FROM TB_EMP
+		WHERE ENO = #{eno}
+	</select>
+	
+	<update id="update" parameterType="EmpVO">
+		UPDATE TB_EMP
+		  SET ENAME = #{ename}
+		     ,JOB = #{job}
+		     ,MANAGER = #{manager}
+		     ,HIREDATE = #{hiredate}
+		     ,SALARY = #{salary}
+		     ,COMMISSION = #{commission}
+		     ,DNO = #{dno}
+		     ,UPDATE_TIME = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS')
+		WHERE ENO = #{eno}
+	</update>
+	
+	<delete id="delete" parameterType="EmpVO">
+		DELETE TB_EMP 
+		WHERE ENO = #{eno}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+

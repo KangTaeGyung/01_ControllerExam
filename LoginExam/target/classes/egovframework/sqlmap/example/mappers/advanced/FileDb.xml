@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="egovframework.example.mapper.advanced.FileDbMapper">
+	<select id="selectFileDbList"
+	        parameterType="Criteria"
+	        resultType="FileDbVO"
+	>
+	   SELECT * FROM TB_FILE_DB
+	   WHERE FILE_TITLE LIKE '%' || #{searchKeyword}  || '%'
+	   OFFSET #{firstIndex} ROWS
+	   FETCH NEXT #{recordCountPerPage} ROWS ONLY
+	</select>
+	
+	<select id="selectFileDbListTotCnt"
+			parameterType="Criteria"
+			resultType="int"
+	>
+		SELECT COUNT(*) FROM TB_FILE_DB
+		WHERE file_title LIKE '%'|| #{searchKeyword} ||'%'
+	</select>
+	
+	<insert id="insert" parameterType="FileDbVO">
+		INSERT INTO TB_FILE_DB(UUID, 
+		                       FILE_TITLE, 
+		                       FILE_CONTENT, 
+		                       FILE_DATA, 
+		                       FILE_URL, 
+		                       INSERT_TIME) 
+		             VALUES(#{uuid}, 
+		                     #{fileTitle},
+		                     #{fileContent},
+		                     #{fileData}, 
+		                     #{fileUrl},
+		                     to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'))
+	</insert>
+	
+	<select id="selectFileDb" 
+	        parameterType="String"
+	        resultType="FileDbVO"
+	>
+		SELECT * FROM TB_FILE_DB
+		WHERE UUID = #{uuid}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		DELETE TB_FILE_DB
+		WHERE UUID = #{uuid}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

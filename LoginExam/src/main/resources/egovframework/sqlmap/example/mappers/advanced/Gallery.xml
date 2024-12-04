@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="egovframework.example.mapper.advanced.GalleryMapper">
+	<select id="selectGalleryList"
+	        parameterType="Criteria"
+	        resultType="GalleryVO"
+	>
+		SELECT * FROM TB_GALLERY
+		WHERE GALLERY_TITLE LIKE '%' || #{searchKeyword} || '%'
+	    OFFSET #{firstIndex} ROWS
+	    FETCH NEXT #{recordCountPerPage} ROWS ONLY
+	</select>
+	
+	<select id="selectGalleryListTotCnt"
+			parameterType="Criteria"
+			resultType="int"
+	>
+		SELECT COUNT(*) FROM TB_GALLERY
+		WHERE GALLERY_TITLE LIKE '%'|| #{searchKeyword} ||'%'
+	</select>
+	
+	<insert id="insert" parameterType="GalleryVO">
+		INSERT INTO TB_GALLERY(UUID, 
+								GALLERY_TITLE, 
+								GALLERY_DATA, 
+								GALLERY_FILE_URL,
+								INSERT_TIME) 
+					VALUES(#{uuid},
+							#{galleryTitle},
+							#{galleryData}, 
+							#{galleryFileUrl},
+							to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'))
+	</insert>
+	
+	<select id="selectGallery" 
+	        parameterType="String"
+	        resultType="GalleryVO"
+	>
+		SELECT * FROM TB_GALLERY
+		WHERE UUID = #{uuid}
+	</select>
+		
+	<delete id="delete" parameterType="String">
+		DELETE TB_GALLERY
+		WHERE UUID = #{uuid}
+	</delete>
+</mapper>
+
+
+
