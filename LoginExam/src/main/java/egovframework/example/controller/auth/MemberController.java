@@ -19,7 +19,7 @@ public class MemberController {
     private MemberService memberService;
     
 //  로그인 화면
-    @GetMapping("/login")
+    @GetMapping("/login.do")
     public String loginView() {
 		return "auth/login";
 	}
@@ -28,7 +28,7 @@ public class MemberController {
      * 사용자로 부터 아이디, 패스워드를 입력받아 인증 성공이면 세션 객체에 계정정보를 담고 사원정보리스트 페이지로 포워딩한다. 인증에
      * 실패하면 로그인 페이지로 다시 리턴한다.
      */
-    @PostMapping("/loginProcess")
+    @PostMapping("/loginProcess.do")
     public String login(HttpServletRequest request, @ModelAttribute MemberVO loginVO) throws Exception {
     	
         // TODO [Step 4-1-01] LoginService의 authenticate메소드를 이용하여 
@@ -50,13 +50,13 @@ public class MemberController {
     } 
     
 //  회원 가입 화면 
-    @GetMapping("/register")
+    @GetMapping("/register.do")
     public String registerView() {
 		return "auth/register";
 	}
     
 //  가입 버튼 클릭시 실행될 함수
-    @PostMapping("/register/addition")
+    @PostMapping("/register/addition.do")
     public String register(HttpServletRequest request, @ModelAttribute MemberVO memberVO) throws Exception {
     	
     	MemberVO memberVO2 = (MemberVO) memberService.authenticateMember(memberVO);
@@ -74,10 +74,10 @@ public class MemberController {
     } 
     
 //  로그아웃 화면 
-    @GetMapping("/logout")
+    @GetMapping("/logout.do")
     public String logout(HttpSession httpSession) {
     	httpSession.removeAttribute("memberVO"); // 세션에 객체 삭제 
     	httpSession.invalidate();                // 무효화
-		return "redirect:/login";                // 로그인 페이지로 강제이동 
+		return "redirect:/login.do";                // 로그인 페이지로 강제이동 
 	}
 }

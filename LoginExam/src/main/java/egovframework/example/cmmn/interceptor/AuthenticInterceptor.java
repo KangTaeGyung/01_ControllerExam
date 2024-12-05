@@ -28,7 +28,7 @@ public class AuthenticInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}else{
 //			사용자가 없으면 로그인 페이지로 강제이동 : 강제 예외 발생
-			ModelAndView modelAndView = new ModelAndView("redirect:/login");			
+			ModelAndView modelAndView = new ModelAndView("redirect:/login.do");			
 			throw new ModelAndViewDefiningException(modelAndView);
 		}
 	}

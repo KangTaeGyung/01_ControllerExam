@@ -47,8 +47,8 @@
                     </a>
                     <%--                   소메뉴 --%>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/dept">Dept</a></li>
-                        <li><a class="dropdown-item" href="/basic/dept/addition">Add Dept</a></li>
+                        <li><a class="dropdown-item" href="/basic/dept.do">Dept</a></li>
+                        <li><a class="dropdown-item" href="/basic/dept/addition.do">Add Dept</a></li>
                     </ul>
                 </li>
 
@@ -60,8 +60,8 @@
                     </a>
                     <%--                   소메뉴 --%>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/emp">Emp</a></li>
-                        <li><a class="dropdown-item" href="/basic/emp/addition">Add Emp</a></li>
+                        <li><a class="dropdown-item" href="/basic/emp.do">Emp</a></li>
+                        <li><a class="dropdown-item" href="/basic/emp/addition.do">Add Emp</a></li>
                     </ul>
                 </li>
 
@@ -73,8 +73,8 @@
                     </a>
                     <%--                   소메뉴 --%>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/basic/faq">Faq</a></li>
-                        <li><a class="dropdown-item" href="/basic/faq/addition">Add Faq</a></li>
+                        <li><a class="dropdown-item" href="/basic/faq.do">Faq</a></li>
+                        <li><a class="dropdown-item" href="/basic/faq/addition.do">Add Faq</a></li>
                     </ul>
                 </li>
 
@@ -86,8 +86,8 @@
                     </a>
                     <%--                   소메뉴 --%>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/advanced/fileDb">FileDb</a></li>
-                        <li><a class="dropdown-item" href="/advanced/fileDb/addition">Add FileDb</a></li>
+                        <li><a class="dropdown-item" href="/advanced/fileDb.do">FileDb</a></li>
+                        <li><a class="dropdown-item" href="/advanced/fileDb/addition.do">Add FileDb</a></li>
                     </ul>
                 </li>
 
@@ -99,8 +99,8 @@
                     </a>
                     <%--                   소메뉴 --%>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/advanced/gallery">Gallery</a></li>
-                        <li><a class="dropdown-item" href="/advanced/gallery/addition">Add Gallery</a></li>
+                        <li><a class="dropdown-item" href="/advanced/gallery.do">Gallery</a></li>
+                        <li><a class="dropdown-item" href="/advanced/gallery/addition.do">Add Gallery</a></li>
                     </ul>
                 </li>
             </ul>
@@ -109,11 +109,11 @@
           <ul class="navbar-nav">
             <!-- {/* 로그인 시작 */} -->
             <li class="nav-item">
-              <a class="nav-link active" href="/register"> 회원가입 </a>
+              <a class="nav-link active" href="/register.do"> 회원가입 </a>
             </li>
             <c:if test="${sessionScope.memberVO == null}">
 	            <li class="nav-item">
-	              <a class="nav-link active" href="/login"> 로그인 </a>
+	              <a class="nav-link active" href="/login.do"> 로그인 </a>
 	            </li>
             </c:if>
             <!-- {/* 로그인 끝 */} -->
@@ -121,7 +121,7 @@
             <!-- {/* 로그아웃 시작 */} -->
             <c:if test="${sessionScope.memberVO != null}">
 	            <li class="nav-item">
-	              <a href="/logout" class="nav-link active"> 로그아웃
+	              <a href="/logout.do" class="nav-link active"> 로그아웃
 	              </a>
 	            </li>
             </c:if>

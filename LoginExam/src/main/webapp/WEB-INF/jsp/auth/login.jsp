@@ -14,7 +14,7 @@
 					<!-- {/* Nested Row within Card Body */} -->
 					<div class="row">
 						<div class="col-lg-6">
-							<img src="${pageContext.request.contextPath}/resources/images/puppy-1920_1280_2.jpg" class="img-fluid">
+							<img src="${pageContext.request.contextPath}/images/puppy-1920_1280_2.jpg" class="img-fluid">
 						</div>
 						<div class="col-lg-6">
 							<div class="p-5">
@@ -22,7 +22,7 @@
 									<h1 class="h4 mb-4">Welcome Back!</h1>
 								</div>
 								<form class="user"
-									action="/loginProcess"
+									action="/loginProcess.do"
 									method="post">
 									<div class="form-group">
 										<input type="text" class="form-control form-control-user mb-3"
@@ -39,7 +39,7 @@
 								</form>
 								<hr />
 								<div class="text-center">
-									<a class="small" href="/register"> Create an Account! </a>
+									<a class="small" href="/register.do"> Create an Account! </a>
 								</div>
 							</div>
 						</div>

@@ -17,7 +17,7 @@
 					<div class="row">
 						<div class="col-lg-5">
 							<img
-								src="${pageContext.request.contextPath}/resources/images/puppy-1920_1280.jpg"
+								src="${pageContext.request.contextPath}/images/puppy-1920_1280.jpg"
 								class="img-fluid">
 						</div>
 						<div class="col-lg-7">
@@ -26,7 +26,7 @@
 									<h1 class="h4 text-gray-900 mb-4">회원 가입</h1>
 								</div>
 								<form class="user"
-										action="${pageContext.request.contextPath}/register/addition"
+										action="${pageContext.request.contextPath}/register/addition.do"
 										method="post"
 								>
 									<div class="form-group">
@@ -58,7 +58,7 @@
 								</form>
 								<hr />
 								<div class="text-center">
-									<a href="/login"> Already have an account? Login! </a>
+									<a href="/login.do"> Already have an account? Login! </a>
 								</div>
 							</div>
 						</div>

@@ -21,8 +21,13 @@ public class CommonExceptionAdvice {
 
 //  컨트롤러에서 어떤 에러가 발생하더라도 이 함수가 실행됨
     @ExceptionHandler(Exception.class)
-    public void  internalServerErrorException(Exception e) {
+    public String internalServerErrorException(Exception e
+    		, RedirectAttributes redirectAttributes
+    		) {
         String errors = "에러 : " + e.getMessage();
         log.info(errors);
+        redirectAttributes.addFlashAttribute("errors", errors); // errors.jsp 로 에러내용 전달
+        
+        return "redirect:/errors.do";
     }
 }
