@@ -10,14 +10,16 @@ import lombok.Setter;
 /**
  * @author : GGG
  * @fileName : Criteria
- * @since : 2024-04-02 description : 공통 클래스 페이징처리 = 
+ * @since : 2024-04-02 description : 
+ *      공통 클래스 
+ *      페이징처리 목적
  *      전자정부 프레임워크에서 가져옴
  */
 @Getter
 @Setter
 public class Criteria implements Serializable {
 	/**
-	 * serialVersion UID
+	 * serialVersion UID, 안하면 @SuppressWarnings("serial") 사용해야함
 	 */
 	private static final long serialVersionUID = -858838578081269359L;
 
